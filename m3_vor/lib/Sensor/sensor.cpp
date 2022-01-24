@@ -28,11 +28,11 @@ Proximity proxi_2(PROXIMITY_PIN_2);
 
 void main_sensor(void)
 {
-    ultra_1.Init_Ultra();
-    ultra_2.Init_Ultra();
-    ultra_3.Init_Ultra();
-    ultra_4.Init_Ultra();
-    ultra_5.Init_Ultra();
+    // ultra_1.Init_Ultra();
+    // ultra_2.Init_Ultra();
+    // ultra_3.Init_Ultra();
+    // ultra_4.Init_Ultra();
+    // ultra_5.Init_Ultra();
     proxi_1.Init_Prox();
     proxi_2.Init_Prox();
     while(1)

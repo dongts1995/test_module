@@ -17,9 +17,9 @@ extern float g_req_linear_vel_x;
 extern float g_req_linear_vel_y;
 extern float g_req_linear_vel_z;
 
-ros::NodeHandle nh;
+// ros::NodeHandle nh;
 
-ros::Subscriber<geometry_msgs::Twist> cmd_sub("cmd_vel", commandCallback);
+// ros::Subscriber<geometry_msgs::Twist> cmd_sub("cmd_vel", commandCallback);
 
 
 void commandCallback(const geometry_msgs::Twist& cmd_msg)
@@ -30,17 +30,17 @@ void commandCallback(const geometry_msgs::Twist& cmd_msg)
 }
 void setup_rosserial(void)
 {
-    nh.initNode();
-    nh.getHardware()->setBaud(57600);
-    nh.subscribe(cmd_sub);
+    // nh.initNode();
+    // nh.getHardware()->setBaud(57600);
+    // nh.subscribe(cmd_sub);
 
-    //while (!nh.connected())
-    while (1)
-    {
-        nh.spinOnce();
-    }
-    // spin();
-    threads.delay(1);
+    // //while (!nh.connected())
+    // while (1)
+    // {
+    //     nh.spinOnce();
+    // }
+    // // spin();
+    // threads.delay(1);
     
 }
 

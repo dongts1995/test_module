@@ -56,10 +56,10 @@ void main_motor(void)
     velocity_R = Read_Velocity_rpm(Right_Wheel_ID);
     velocity_L = Read_Velocity_rpm(Left_Wheel_ID);
 
-    if(( abs(right_ve - velocity_R) >= 50 ) || ( abs(left_ve - velocity_L) >= 50 ))
-    {
-      setup_motor();
-    }
+    // if(( abs(right_ve - velocity_R) >= 50 ) || ( abs(left_ve - velocity_L) >= 50 ))
+    // {
+    //   setup_motor();
+    // }
     
 
 
@@ -80,10 +80,10 @@ void setup_motor(void)
   // 3.2. set thoi gian thay doi toc do tu 0rpm den 3000rpm (tang toc 6083h, giam toc 6084h), don vi ms,
   // set 6083h = 1s - send: 602 23 83 60 00 E8 03 00 00
   // set 6084h = 1s - send: 602 23 84 60 00 E8 03 00 00
-  SDO_Write_OD(Left_Wheel_ID, SDO_W4, 0x6083, 0x00, 0x000003e8);
-  SDO_Write_OD(Left_Wheel_ID, SDO_W4, 0x6084, 0x00, 0x000003e8);
-  SDO_Write_OD(Right_Wheel_ID, SDO_W4, 0x6083, 0x00, 0x000003e8);
-  SDO_Write_OD(Right_Wheel_ID, SDO_W4, 0x6084, 0x00, 0x000003e8);
+  SDO_Write_OD(Left_Wheel_ID, SDO_W4, 0x6083, 0x00, 0x00001388);
+  SDO_Write_OD(Left_Wheel_ID, SDO_W4, 0x6084, 0x00, 0x00001388);
+  SDO_Write_OD(Right_Wheel_ID, SDO_W4, 0x6083, 0x00, 0x00001388);
+  SDO_Write_OD(Right_Wheel_ID, SDO_W4, 0x6084, 0x00, 0x00001388);
   // 3.3. Set toc do muc tieu: 60FFh,don vi 0,1rpm
   // set 60FFh = 10rpm - send: 602 23 FF 60 00 64 00 00 00
   SDO_Write_OD(Left_Wheel_ID, SDO_W4, 0x60FF, 0x00, 0x00000000);
